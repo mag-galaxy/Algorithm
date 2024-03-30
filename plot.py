@@ -30,9 +30,9 @@ for i in range(len(data)):
   if i%3 == 0:
     input_size.append(int(data[i]))
   elif i%3 == 1:
-    nlgn.append(double(data[i]))
+    nlgn.append(float(data[i]))
   else:
-    n2.append(double(data[i]))
+    n2.append(float(data[i]))
 
 print(input_size)
 print(n2)
