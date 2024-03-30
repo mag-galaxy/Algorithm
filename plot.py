@@ -1,4 +1,21 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import matplotlib.backends.backend_agg
+import matplotlib.figure
+import numpy
+import argparse
+import pathlib
+import sys
+
+parser = argparse.ArgumentParser(description='plotting f(x)')
+# add argument
+parser.add_argument ('-o', '--output', default='output.png',\
+                     help='output file name (default: output.png)')
+parser.add_argument ('-r', '--resolution', type=float, default=250.0,\
+                     help='resolution of plot in DPI (default: 250.0)')
+args = parser.parse_args()
+
+file_output = args.output
+g_resolution = args.resolution
 
 input_size = [] # n
 n2 = [] # time (S)
@@ -21,11 +38,26 @@ print(input_size)
 print(n2)
 print(nlgn)
 
+# figure,anvas,axes object
+fig = matplotlib.figure.Figure()
+canvas = matplotlib.backends.backend_agg.FigureCanvasAgg(fig)
+ax = fig.add_subplot(111)
+
 # plot(x, y)
-plt.plot(input_size, n2, label='n^2')
-plt.plot(input_size, nlgn, label='nlgn')
-plt.xlabel('input size (n)')
-plt.ylabel('time (s)')
-plt.legend()
-plt.grid(True)
-plt.show()
+ax.plot(input_size, n2, label='n^2')
+ax.plot(input_size, nlgn, label='nlgn')
+ax.set_xlim(500,6000)
+ax.set_ylim(0.0, 0.1)
+ax.set_xlabel('$input size n$')
+ax.set_ylabel('$time (s)$')
+ax.grid()
+ax.legend()
+fig.savefig(file_output, dpi = g_resolution)
+
+# plt.plot(input_size, n2, label='n^2')
+# plt.plot(input_size, nlgn, label='nlgn')
+# plt.xlabel('input size (n)')
+# plt.ylabel('time (s)')
+# plt.legend()
+# plt.grid(True)
+# plt.show()
