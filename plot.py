@@ -28,7 +28,7 @@ f.close()
 
 for i in range(len(data)):
   if i%3 == 0:
-    input_size.append(double(data[i]))
+    input_size.append(int(data[i]))
   elif i%3 == 1:
     nlgn.append(double(data[i]))
   else:
