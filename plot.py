@@ -28,11 +28,11 @@ f.close()
 
 for i in range(len(data)):
   if i%3 == 0:
-    input_size.append(data[i])
+    input_size.append(double(data[i]))
   elif i%3 == 1:
-    nlgn.append(data[i])
+    nlgn.append(double(data[i]))
   else:
-    n2.append(data[i])
+    n2.append(double(data[i]))
 
 print(input_size)
 print(n2)
@@ -48,8 +48,8 @@ ax.plot(input_size, n2, label='n^2')
 ax.plot(input_size, nlgn, label='nlgn')
 ax.set_xlim(500,6000)
 ax.set_ylim(0.0, 0.1)
-ax.set_xlabel('$input size n$')
-ax.set_ylabel('$time (s)$')
+ax.set_xlabel('$input$ $size$ $n$')
+ax.set_ylabel('$time$ $(s)$')
 ax.grid()
 ax.legend()
 fig.savefig(file_output, dpi = g_resolution)
