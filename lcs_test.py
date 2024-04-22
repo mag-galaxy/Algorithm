@@ -36,7 +36,7 @@ with open('input.txt', 'r') as f_read:
             start2 = time.time()
             ans2 = lcs_len(s1, s2, len(s1), len(s2))
             end2 = time.time()
-            f_write.write(total_len + ' ' + end1 - start1 + ' ' + end2 - start2)
+            f_write.write(str(total_len) + ' ' + str(end1 - start1) + ' ' + str(end2 - start2))
 
 f_write.colse()
 f_read.close()
