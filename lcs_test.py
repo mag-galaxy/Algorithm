@@ -30,7 +30,7 @@ with open('input.txt', 'r') as f_read:
             total_len = max(len(s1), len(s2))
             
             start1 = time.time()
-            ans1 = lcs_brute(s1, s2, len(s1), len(s2))
+            ans1 = lcs_brute(s1, s2, len(s1)-1, len(s2)-1)
             end1 = time.time()
             f_write.write(total_len + ' ' + end1 - start1)
 
