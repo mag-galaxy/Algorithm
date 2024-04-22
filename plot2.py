@@ -17,8 +17,8 @@ with open('output.txt', 'r') as f_read:
     dp.append(double(all_data[2]))
 
 print(input_size)
-print(dp)
 print(brute)
+print(dp)
 
 # figure,anvas,axes object
 fig = matplotlib.figure.Figure()
