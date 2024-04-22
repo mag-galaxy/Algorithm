@@ -16,14 +16,6 @@ with open('output.txt', 'r') as f_read:
     brute.append(double(all_data[1])
     dp.append(double(all_data[2]))
 
-for i in range(len(data)):
-  if i%3 == 0:
-    input_size.append(int(data[i]))
-  elif i%3 == 1:
-    brute.append(float(data[i]))
-  else:
-    dp.append(float(data[i]))
-
 print(input_size)
 print(dp)
 print(brute)
@@ -35,8 +27,8 @@ ax = fig.add_subplot(111)
 
 ax.plot(input_size, dp, label='dp')
 ax.plot(input_size, brute, label='brute')
-ax.set_xlim(500,6000)
-ax.set_ylim(0.0, 0.04)
+ax.set_xlim(3,10)
+ax.set_ylim(0.0, 2.0)
 ax.set_xlabel('$input$ $size$ $n$')
 ax.set_ylabel('$time$ $(s)$')
 ax.set_title("dp vs. brute")
