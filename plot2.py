@@ -8,7 +8,6 @@ resolution = 200
 input_size = [] # string length
 dp = [] # time (S)
 brute = [] # time (S)
-final_input_size = [] # string length
 
 f = open('output.txt', 'r')
 all_data = f.read()
@@ -19,19 +18,19 @@ brute_v = 0
 dp_v = 0
 for i in range(len(data)):
   if i%3 == 0:
-    input_size.append(int(data[i]))
+    continue
   elif i%3 == 1:
     brute_v += (float(data[i]))
   else:
     dp_v += (float(data[i]))
-  if i%5 == 4: # has 5 data
-    final_input_size.append(input_size[i])
-    brute.append(brute_v)
-    dp.append(dp_v)
+  if i%15 == 14: # has 5 data, 15 lines
+    input_size.append(int(data[i-2]))
+    brute.append(brute_v/5.0)
+    dp.append(dp_v/5.0)
     brute_v = 0
     dp_v = 0
 
-print(final_input_size)
+print(input_size)
 print(brute)
 print(dp)
 
