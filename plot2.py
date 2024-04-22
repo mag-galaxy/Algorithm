@@ -23,8 +23,8 @@ with open('output.txt', 'r') as f:
       dp.append(float(line))
     if i%5 == 4: # has 5 data
       final_input_size.append(input_size[i])
-      final_brute.append(brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])
-      final_dp.append(dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])
+      final_brute.append((brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])/5.0)
+      final_dp.append((dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])/5.0)
 f.close()
 
 print(final_input_size)
