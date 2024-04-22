@@ -16,10 +16,6 @@ with open('output.txt', 'r') as f_read:
     brute.append(float(all_data[1]))
     dp.append(float(all_data[2]))
 
-print(input_size)
-print(brute)
-print(dp)
-
 # figure,anvas,axes object
 fig = matplotlib.figure.Figure()
 canvas = matplotlib.backends.backend_agg.FigureCanvasAgg(fig)
