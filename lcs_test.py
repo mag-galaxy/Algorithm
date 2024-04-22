@@ -32,9 +32,8 @@ with open('input.txt', 'r') as f_read:
             start1 = time.time()
             ans1 = lcs_brute(s1, s2, len(s1)-1, len(s2)-1)
             end1 = time.time()
-            f_write.write(total_len + ' ' + end1 - start1)
 
             start2 = time.time()
             ans2 = lcs_len(s1, s2, len(s1), len(s2))
             end2 = time.time()
-            f_write.write(total_len + ' ' + end2 - start2)
+            f_write.write(total_len + ' ' + end1 - start1 + ' ' + end2 - start2)
