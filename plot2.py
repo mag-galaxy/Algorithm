@@ -1,7 +1,6 @@
 import matplotlib.backends.backend_agg
 import matplotlib.figure
 import numpy
-import pathlib
 
 file_output = 'lcs.png'
 resolution = 200
@@ -10,10 +9,12 @@ input_size = [] # string length
 dp = [] # time (S)
 brute = [] # time (S)
 
-f = open('output.txt', 'r')
-all_data = f.read()
-data = all_data.split()
-f.close()
+with open('output.txt', 'r') as f_read:
+  for line in f_read:
+    all_data = line.split()
+    input_size.append(int(all_data[0]))
+    brute.append(double(all_data[1])
+    dp.append(double(all_data[2]))
 
 for i in range(len(data)):
   if i%3 == 0:
@@ -32,7 +33,6 @@ fig = matplotlib.figure.Figure()
 canvas = matplotlib.backends.backend_agg.FigureCanvasAgg(fig)
 ax = fig.add_subplot(111)
 
-# plot(x, y)
 ax.plot(input_size, dp, label='dp')
 ax.plot(input_size, brute, label='brute')
 ax.set_xlim(500,6000)
