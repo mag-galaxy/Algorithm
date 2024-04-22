@@ -24,7 +24,7 @@ def lcs_len(str1, str2, m, n):
 with open('input.txt', 'r') as f_read:
     with open('output.txt', 'w') as f_write:
         for line in f_read:
-            data_list = line.split('')
+            data_list = line.split()
             s1 = data_list[0]
             s2 = data_list[1]
             total_len = max(len(s1), len(s2))
