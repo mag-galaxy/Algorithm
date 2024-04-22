@@ -38,5 +38,5 @@ with open('input.txt', 'r') as f_read:
             end2 = time.time()
             f_write.write(str(total_len) + ' ' + str(end1 - start1) + ' ' + str(end2 - start2))
 
-f_write.colse()
+f_write.close()
 f_read.close()
