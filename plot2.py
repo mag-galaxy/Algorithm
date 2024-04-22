@@ -13,7 +13,7 @@ with open('output.txt', 'r') as f_read:
   for line in f_read:
     all_data = line.split()
     input_size.append(int(all_data[0]))
-    brute.append(double(all_data[1])
+    brute.append(double(all_data[1]))
     dp.append(double(all_data[2]))
 
 print(input_size)
