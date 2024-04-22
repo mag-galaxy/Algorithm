@@ -27,11 +27,11 @@ with open('input.txt', 'r') as f_read:
             data_list = line.split('')
             s1 = data_list[0]
             s2 = data_list[1]
-
+            total_len = max(len(s1), len(s2))
+            
             start1 = time.time()
             ans1 = lcs_brute(s1, s2, len(s1), len(s2))
             end1 = time.time()
-            total_len = max(len(s1), len(s2))
             f_write.write(total_len + ' ' + end1 - start1)
 
             start2 = time.time()
