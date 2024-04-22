@@ -8,6 +8,9 @@ resolution = 200
 input_size = [] # string length
 dp = [] # time (S)
 brute = [] # time (S)
+final_input_size = [] # string length
+final_dp = [] # time (S)
+final_brute = [] # time (S)
 
 with open('output.txt', 'r') as f:
   i = 0
@@ -18,11 +21,15 @@ with open('output.txt', 'r') as f:
       brute.append(float(line))
     else:
       dp.append(float(line))
+    if i%5 == 4: # has 5 data
+      final_input_size.append(input_size[i])
+      final_brute.append(brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])
+      final_dp.append(dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])
 f.close()
 
-print(input_size)
-print(brute)
-print(dp)
+print(final_input_size)
+print(final_brute)
+print(final_dp)
 
 # figure,anvas,axes object
 fig = matplotlib.figure.Figure()
