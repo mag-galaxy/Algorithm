@@ -9,12 +9,20 @@ input_size = [] # string length
 dp = [] # time (S)
 brute = [] # time (S)
 
-with open('output.txt', 'r') as f_read:
-  for line in f_read:
-    all_data = line.split()
-    input_size.append(int(all_data[0]))
-    brute.append(float(all_data[1]))
-    dp.append(float(all_data[2]))
+with open('output.txt', 'r') as f:
+  i = 0
+  for line in f:
+    if i%3 == 0:
+      input_size.append(int(line))
+    elif i%3 == 1:
+      brute.append(float(line))
+    else:
+      dp.append(float(line))
+f.close()
+
+print(input_size)
+print(brute)
+print(dp)
 
 # figure,anvas,axes object
 fig = matplotlib.figure.Figure()
