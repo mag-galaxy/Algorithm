@@ -12,21 +12,22 @@ final_input_size = [] # string length
 final_dp = [] # time (S)
 final_brute = [] # time (S)
 
-with open('output.txt', 'r') as f:
-  i = 0
-  for line in f:
-    if i%3 == 0:
-      input_size.append(int(line))
-    elif i%3 == 1:
-      brute.append(float(line))
-    else:
-      dp.append(float(line))
-    if i%5 == 4: # has 5 data
-      final_input_size.append(input_size[i])
-      final_brute.append((brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])/5.0)
-      final_dp.append((dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])/5.0)
-    ++i
+f = open('output.txt', 'r')
+all_data = f.read()
+data = all_data.split()
 f.close()
+
+for i in range(len(data)):
+  if i%3 == 0:
+    input_size.append(int(data[i]))
+  elif i%3 == 1:
+    brute.append(float(data[i]))
+  else:
+    dp.append(float(data[i]))
+  if i%5 == 4: # has 5 data
+    final_input_size.append(input_size[i])
+    final_brute.append((brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])/5.0)
+    final_dp.append((dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])/5.0)
 
 print(final_input_size)
 print(final_brute)
