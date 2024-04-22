@@ -9,29 +9,31 @@ input_size = [] # string length
 dp = [] # time (S)
 brute = [] # time (S)
 final_input_size = [] # string length
-final_dp = [] # time (S)
-final_brute = [] # time (S)
 
 f = open('output.txt', 'r')
 all_data = f.read()
 data = all_data.split()
 f.close()
 
+brute_v = 0
+dp_v = 0
 for i in range(len(data)):
   if i%3 == 0:
     input_size.append(int(data[i]))
   elif i%3 == 1:
-    brute.append(float(data[i]))
+    brute_v += (float(data[i]))
   else:
-    dp.append(float(data[i]))
+    dp_v += (float(data[i]))
   if i%5 == 4: # has 5 data
     final_input_size.append(input_size[i])
-    final_brute.append((brute[i] + brute[i-1] + brute[i-2] + brute[i-3] + brute[i-4])/5.0)
-    final_dp.append((dp[i] + dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4])/5.0)
+    brute.append(brute_v)
+    dp.append(dp_v)
+    brute_v = 0
+    dp_v = 0
 
 print(final_input_size)
-print(final_brute)
-print(final_dp)
+print(brute)
+print(dp)
 
 # figure,anvas,axes object
 fig = matplotlib.figure.Figure()
