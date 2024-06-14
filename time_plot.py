@@ -17,8 +17,8 @@ with open ('time_result.txt', 'r') as f_read:
         vertex.append(int(data[0]))
         edge.append(int(data[1]))
         capacity.append(int(data[2]))
-        time_ed.append(float(data[3]))
-        time_fat.append(float(data[4]))
+        time_fat.append(float(data[3]))
+        time_ed.append(float(data[4]))
 f_read.close()
 
 # figure,anvas,axes object
