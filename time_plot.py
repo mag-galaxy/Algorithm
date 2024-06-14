@@ -1,4 +1,5 @@
-import matplotlib
+import matplotlib.backends.backend_agg
+import matplotlib.figure
 
 file_out = 'maxflow.png'
 
