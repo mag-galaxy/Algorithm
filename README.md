@@ -1,4 +1,4 @@
-# algorithm
+# Algorithm
 
 NCU
 112-2
