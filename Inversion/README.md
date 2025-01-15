@@ -1,6 +1,6 @@
 # how to run files above
 
-We want to compare the efficiency (the time used) of two ways
+We want to compare the efficiency (the time used) of two ways to do inversion
 + nested loop
 + modify merge sort
 
