@@ -1,7 +1,5 @@
 # Algorithm
 
-NCU
-112-2
-Course: CE3005-A
+NCU 2024 Spring CE3005-A Algorithm
 
 + coding homework
